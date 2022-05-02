@@ -18,7 +18,7 @@ VERSION = '0.1.0'
 
 
 REQUIRED = [
-    'selenium', 'tqdm', 'matplotlib', 'lxml', 'requests', 're',
+    'selenium', 'tqdm', 'matplotlib', 'lxml', 'requests',
 ]
 
 
