@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-# Note: To use the 'upload' functionality of this file, you must:
-#   $ pipenv install twine --dev
-
 import io
 import os
 import sys
@@ -14,38 +10,31 @@ from setuptools import find_packages, setup, Command
 # Package meta-data.
 NAME = 'spiralabyss'
 DESCRIPTION = 'Team analyzer for genshin spiralabyss'
-URL = 'https://github.com/me/myproject'
-EMAIL = 'me@example.com'
-AUTHOR = 'Awesome Soul'
+URL = 'https://github.com/acgmusic/spiralabyss'
+EMAIL = '1152764556@qq.com'
+AUTHOR = 'acgmusic'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = '0.1.0'
 
-# What packages are required for this module to be executed?
+
 REQUIRED = [
-    # 'requests', 'maya', 'records',
+    'selenium', 'tqdm', 'matplotlib', 'lxml', 'requests', 're',
 ]
 
-# What packages are optional?
-EXTRAS = {
-    # 'fancy feature': ['django'],
-}
 
-# The rest you shouldn't have to touch too much :)
-# ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
+EXTRAS = {}
+
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-# Import the README and use it as the long-description.
-# Note: this will only work if 'README.md' is present in your MANIFEST.in file!
+
 try:
     with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
         long_description = '\n' + f.read()
 except FileNotFoundError:
     long_description = DESCRIPTION
 
-# Load the package's __version__.py module as a dictionary.
+
 about = {}
 if not VERSION:
     project_slug = NAME.lower().replace("-", "_").replace(" ", "_")
@@ -92,7 +81,6 @@ class UploadCommand(Command):
         sys.exit()
 
 
-# Where the magic happens:
 setup(
     name=NAME,
     version=about['__version__'],
@@ -104,12 +92,7 @@ setup(
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=["tests", "*.tests", "*.tests.*", "tests.*"]),
-    # If your package is a single module, use this instead of 'packages':
-    # py_modules=['mypackage'],
 
-    # entry_points={
-    #     'console_scripts': ['mycli=mymodule:cli'],
-    # },
     install_requires=REQUIRED,
     extras_require=EXTRAS,
     include_package_data=True,
