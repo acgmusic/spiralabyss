@@ -73,7 +73,7 @@ def update_local_cache():
     src_list = tree_main.xpath('//*[@id="__next"]/div[2]/div[1]/div/main/div/section/div[2]//@src')
     title_list = tree_main.xpath('//*[@id="__next"]/div[2]/div[1]/div/main/div/section/div[2]//@title')
 
-    imag_path = os.path.join(os.path.dirname(__file__), "data/cache/pics")
+    imag_path = os.path.join(os.path.dirname(__file__), "data/cache/pics/")
     pic_list = [fn.split('.')[0] for fn in os.listdir(imag_path)]
 
     for src, title in zip(src_list, title_list):
